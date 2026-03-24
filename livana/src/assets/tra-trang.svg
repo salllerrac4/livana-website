@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Trà Trắng" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef2ee" />
+      <stop offset="100%" stop-color="#f3f7ed" />
+    </linearGradient>
+    <linearGradient id="cup-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f3f3f3" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="40" ry="40" fill="url(#bg-gradient)" />
+  <path
+    d="M110 190c0 40 40 60 90 60s90-20 90-60"
+    stroke="#d7a26b"
+    stroke-width="6"
+    fill="none"
+    stroke-linecap="round"
+  />
+  <path
+    d="M160 200h80a8 8 0 0 1 8 8v10h-96v-10a8 8 0 0 1 8-8z"
+    fill="#fefefe"
+    stroke="#d7a26b"
+    stroke-width="4"
+  />
+  <path
+    d="M150 200c-5-40 5-80 40-100s60-5 70 20"
+    fill="none"
+    stroke="#acc76c"
+    stroke-width="8"
+    stroke-linecap="round"
+  />
+  <path
+    d="M185 150c12-18 32-18 48-6"
+    fill="none"
+    stroke="#8bbb4d"
+    stroke-width="6"
+    stroke-linecap="round"
+  />
+  <ellipse cx="250" cy="190" rx="8" ry="12" fill="#8bbb4d" />
+  <path
+    d="M158 142c0-6 18-30 28-30s28 24 28 30"
+    fill="none"
+    stroke="#ad8f5e"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <text x="200" y="260" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#776347" font-weight="700">
+    Trà Trắng
+  </text>
+</svg>
