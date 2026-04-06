@@ -48,6 +48,7 @@ const Footer = () => {
           <p className="text-sm text-white/80">
             Thương hiệu tinh dầu thiên nhiên hướng đến sự cân bằng xanh trong từng không gian sống.
           </p>
+          <p className="sr-only">tinhdaulivana tinh dau livana tinh dau LIVANA</p>
           <p className="text-xs font-semibold text-primaryLight">SỐNG XANH - AN NHIÊN</p>
         </div>
         <div>

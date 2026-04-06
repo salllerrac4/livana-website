@@ -1,5 +1,6 @@
 ﻿import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
+import Seo from '../components/Seo';
 import { useCart } from '../hooks/useCart';
 import { getProductPrice } from '../utils/pricing';
 
@@ -8,6 +9,7 @@ const Cart = () => {
 
   return (
     <div className="space-y-8">
+      <Seo title="Giỏ hàng" noIndex />
       <SectionTitle heading="Giỏ hàng của bạn" subheading="Kiểm tra số lượng và hoàn tất đơn hàng trong vài bước." />
 
       {cartItems.length === 0 ? (
