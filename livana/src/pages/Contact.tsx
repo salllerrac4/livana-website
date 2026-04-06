@@ -1,8 +1,11 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import type { FormEvent } from 'react';
 import FAQItem from '../components/FAQItem';
 import SectionTitle from '../components/SectionTitle';
+import Seo from '../components/Seo';
+import { brandHandle, brandProfiles, brandSearchHint, supportEmail, supportPhoneDisplay } from '../data/brand';
 import { faqItems } from '../data/faq';
+import { createBreadcrumbSchema } from '../utils/structuredData';
 
 const Contact = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -11,22 +14,31 @@ const Contact = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!formState.name || !formState.email.includes('@') || formState.message.length < 10) {
-      setStatus('Vui lòng điền đầy đủ thông tin và mô tả tối thiểu 10 ký tự.');
+      setStatus('Vui long dien day du thong tin va mo ta toi thieu 10 ky tu.');
       return;
     }
-    setStatus('Cảm ơn bạn! Đội ngũ LIVANA sẽ phản hồi trong 24 giờ làm việc.');
+    setStatus('Cam on ban! Doi ngu LIVANA se phan hoi trong 24 gio lam viec.');
     setFormState({ name: '', email: '', message: '' });
   };
 
   return (
     <div className="space-y-10">
-      <SectionTitle heading="Liên hệ LIVANA" subheading="Gửi câu hỏi, nhu cầu tư vấn mùi hương hoặc hợp tác bán lẻ." />
+      <Seo
+        title="Lien he"
+        description="Lien he LIVANA de duoc tu van chon mui huong, hoi dap cach su dung tinh dau va ket noi hop tac ban le."
+        url="/contact"
+        jsonLd={createBreadcrumbSchema([
+          { name: 'Trang chu', path: '/' },
+          { name: 'Lien he', path: '/contact' },
+        ])}
+      />
+      <SectionTitle as="h1" heading="Lien he LIVANA" subheading="Gui cau hoi, nhu cau tu van mui huong hoac hop tac ban le." />
 
       <div className="grid gap-8 md:grid-cols-2">
         <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl border border-primary/10 bg-white/80 p-6 shadow-sm">
           <div>
             <label htmlFor="name" className="text-sm font-semibold text-textMain">
-              Họ tên
+              Ho ten
             </label>
             <input
               id="name"
@@ -52,7 +64,7 @@ const Contact = () => {
           </div>
           <div>
             <label htmlFor="message" className="text-sm font-semibold text-textMain">
-              Nội dung
+              Noi dung
             </label>
             <textarea
               id="message"
@@ -65,19 +77,27 @@ const Contact = () => {
           </div>
           {status && <p className="text-sm text-primary">{status}</p>}
           <button type="submit" className="w-full rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white">
-            Gửi yêu cầu
+            Gui yeu cau
           </button>
         </form>
 
         <div className="space-y-6 rounded-3xl bg-white/60 p-6">
           <div>
-            <p className="text-sm font-semibold text-primary">Thông tin liên hệ</p>
-            <p className="mt-2 text-sm text-textMain/80">Email: tinhdaulivana@gmail.com</p>
-            <p className="text-sm text-textMain/80">Hotline: 0345077138</p>
-            <p className="text-sm text-textMain/80">Shopee & Lazada: @livana.official</p>
+            <p className="text-sm font-semibold text-primary">Thong tin lien he</p>
+            <p className="mt-2 text-sm text-textMain/80">Email: {supportEmail}</p>
+            <p className="text-sm text-textMain/80">Hotline: {supportPhoneDisplay}</p>
+            <p className="text-sm text-textMain/80">Facebook, TikTok, Shopee: @{brandHandle}</p>
+            <p className="mt-2 text-sm text-textMain/70">{brandSearchHint}</p>
+            <div className="mt-3 flex flex-wrap gap-3 text-sm">
+              {brandProfiles.map((profile) => (
+                <a key={profile.name} href={profile.url} target="_blank" rel="noreferrer" className="font-semibold text-primary underline">
+                  {profile.name}
+                </a>
+              ))}
+            </div>
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-textMain">Câu hỏi thường gặp</h3>
+            <h2 className="text-lg font-semibold text-textMain">Cau hoi thuong gap</h2>
             <div className="mt-3">
               {faqItems.map((item) => (
                 <FAQItem key={item.question} {...item} />

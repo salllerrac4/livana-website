@@ -1,18 +1,20 @@
-﻿import { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import ProductGrid from '../components/ProductGrid';
 import SectionTitle from '../components/SectionTitle';
+import Seo from '../components/Seo';
 import { products } from '../data/products';
-import type { Product, ProductCategory } from '../types/product';
 import { useCart } from '../hooks/useCart';
+import type { Product, ProductCategory } from '../types/product';
+import { createBreadcrumbSchema } from '../utils/structuredData';
 import { getDefaultSize, getProductPrice } from '../utils/pricing';
 
 const categories: { label: string; value: 'all' | ProductCategory }[] = [
-  { label: 'Tất cả', value: 'all' },
-  { label: 'Ngủ ngon', value: 'sleep' },
-  { label: 'Thư giãn', value: 'relax' },
-  { label: 'Tập trung', value: 'focus' },
-  { label: 'Không khí tươi mới', value: 'fresh' },
-  { label: 'Khác', value: 'other' },
+  { label: 'Tat ca', value: 'all' },
+  { label: 'Ngu ngon', value: 'sleep' },
+  { label: 'Thu gian', value: 'relax' },
+  { label: 'Tap trung', value: 'focus' },
+  { label: 'Khong khi tuoi moi', value: 'fresh' },
+  { label: 'Khac', value: 'other' },
 ];
 
 const Products = () => {
@@ -45,9 +47,19 @@ const Products = () => {
 
   return (
     <div className="space-y-10">
+      <Seo
+        title="San pham"
+        description="Bo suu tap tinh dau LIVANA gom cac mui huong thu gian, ngu ngon, lam moi khong gian va tang su tap trung. Xem chi tiet tung san pham va dung tich."
+        url="/products"
+        jsonLd={createBreadcrumbSchema([
+          { name: 'Trang chu', path: '/' },
+          { name: 'San pham', path: '/products' },
+        ])}
+      />
       <SectionTitle
-        heading="Bộ sưu tập tinh dầu LIVANA"
-        subheading="Hơn 20 công thức phối hương dành cho từng khoảnh khắc sống xanh."
+        as="h1"
+        heading="Bo suu tap tinh dau LIVANA"
+        subheading="Hon 20 cong thuc phoi huong danh cho tung khoanh khac song xanh."
       />
 
       <div className="flex flex-wrap items-center gap-4 rounded-3xl border border-primary/10 bg-white/70 p-4 text-sm">
@@ -69,14 +81,14 @@ const Products = () => {
           onChange={(event) => setSort(event.target.value as typeof sort)}
           className="ml-auto rounded-full border border-primary/20 px-4 py-2 text-sm"
         >
-          <option value="default">Sắp xếp mặc định</option>
-          <option value="price-asc">Giá tăng dần</option>
-          <option value="price-desc">Giá giảm dần</option>
-          <option value="newest">Mới nhất</option>
+          <option value="default">Sap xep mac dinh</option>
+          <option value="price-asc">Gia tang dan</option>
+          <option value="price-desc">Gia giam dan</option>
+          <option value="newest">Moi nhat</option>
         </select>
       </div>
 
-      <ProductGrid products={filtered} onAddToCart={handleAdd} emptyMessage="Chưa có sản phẩm thuộc danh mục này." />
+      <ProductGrid products={filtered} onAddToCart={handleAdd} emptyMessage="Chua co san pham thuoc danh muc nay." />
     </div>
   );
 };

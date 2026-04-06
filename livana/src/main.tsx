@@ -1,16 +1,20 @@
-﻿import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import { StrictMode } from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { CartProvider } from './hooks/useCart';
-import { HelmetProvider } from 'react-helmet-async';
+import AppProviders from './AppProviders';
 
-createRoot(document.getElementById('root') as HTMLElement).render(
+const container = document.getElementById('root') as HTMLElement;
+const app = (
   <StrictMode>
-    <HelmetProvider>
-      <CartProvider>
-        <App />
-      </CartProvider>
-    </HelmetProvider>
-  </StrictMode>,
+    <AppProviders>
+      <App />
+    </AppProviders>
+  </StrictMode>
 );
+
+if (container.hasChildNodes()) {
+  hydrateRoot(container, app);
+} else {
+  createRoot(container).render(app);
+}

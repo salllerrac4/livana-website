@@ -9,7 +9,7 @@ const Cart = () => {
 
   return (
     <div className="space-y-8">
-      <Seo title="Giỏ hàng" noIndex />
+      <Seo title="Gio hang" noIndex url="/cart" />
       <SectionTitle heading="Giỏ hàng của bạn" subheading="Kiểm tra số lượng và hoàn tất đơn hàng trong vài bước." />
 
       {cartItems.length === 0 ? (

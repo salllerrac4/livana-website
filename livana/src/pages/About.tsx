@@ -1,63 +1,74 @@
-﻿import SectionTitle from '../components/SectionTitle';
+import SectionTitle from '../components/SectionTitle';
+import Seo from '../components/Seo';
+import { createBreadcrumbSchema } from '../utils/structuredData';
 
 const coreValues = [
   {
-    title: 'Thiên nhiên thuần khiết',
-    description: 'Nguồn nguyên liệu hữu cơ từ nông trại nhỏ tại Lâm Đồng, Huế và Sa Pa.',
+    title: 'Thien nhien thuan khiet',
+    description: 'Nguon nguyen lieu huu co tu nong trai nho tai Lam Dong, Hue va Sa Pa.',
   },
   {
-    title: 'An toàn khoa học',
-    description: 'Pha chế bởi chuyên gia mùi hương, đáp ứng tiêu chuẩn IFRA và CGMP.',
+    title: 'An toan khoa hoc',
+    description: 'Pha che boi chuyen gia mui huong, dap ung tieu chuan IFRA va CGMP.',
   },
   {
-    title: 'Tối giản tinh tế',
-    description: 'Bao bì thủy tinh tái chế, thiết kế tối giản phù hợp mọi phong cách sống.',
+    title: 'Toi gian tinh te',
+    description: 'Bao bi thuy tinh tai che, thiet ke toi gian phu hop moi phong cach song.',
   },
   {
-    title: 'Xanh bền vững',
-    description: 'Đối tác trồng trọt được trả công công bằng, đóng góp quỹ tái trồng rừng hàng quý.',
+    title: 'Xanh ben vung',
+    description: 'Doi tac trong trot duoc tra cong cong bang, dong gop quy tai trong rung hang quy.',
   },
 ];
 
 const steps = [
   {
-    title: '1. Tuyển chọn nguyên liệu',
-    content: 'LIVANA chỉ thu hoạch vào buổi sáng sớm khi tinh dầu đạt nồng độ cao nhất. Mỗi lô đều có chứng nhận xuất xứ rõ ràng.',
+    title: '1. Tuyen chon nguyen lieu',
+    content: 'LIVANA chi thu hoach vao buoi sang som khi tinh dau dat nong do cao nhat. Moi lo deu co chung nhan xuat xu ro rang.',
   },
   {
-    title: '2. Chưng cất chậm',
-    content: 'Quy trình chưng cất bằng hơi nước giữ nguyên đặc tính tự nhiên, không pha cồn hay dung môi công nghiệp.',
+    title: '2. Chung cat cham',
+    content: 'Quy trinh chung cat bang hoi nuoc giu nguyen dac tinh tu nhien, khong pha con hay dung moi cong nghiep.',
   },
   {
-    title: '3. Đóng gói và kiểm định',
-    content: 'Chai thủy tinh hổ phách chống tia UV, nắp gỗ sồi khắc laser cùng tem QR truy xuất nguồn gốc.',
+    title: '3. Dong goi va kiem dinh',
+    content: 'Chai thuy tinh ho phach chong tia UV, nap go soi khac laser cung tem QR truy xuat nguon goc.',
   },
 ];
 
 const About = () => (
   <div className="space-y-10">
+    <Seo
+      title="Ve LIVANA"
+      description="Tim hieu cau chuyen thuong hieu LIVANA, quy trinh chon nguyen lieu, chung cat va cac gia tri theo duoi trong tung chai tinh dau."
+      url="/about"
+      jsonLd={createBreadcrumbSchema([
+        { name: 'Trang chu', path: '/' },
+        { name: 'Ve LIVANA', path: '/about' },
+      ])}
+    />
     <SectionTitle
-      heading="Câu chuyện LIVANA"
-      subheading="LIVANA ra đời từ mong muốn mang thiên nhiên trở lại trong từng căn phòng đô thị. Thương hiệu được sáng lập bởi hai nhà thiết kế yêu thích lối sống xanh và trị liệu bằng mùi hương."
+      as="h1"
+      heading="Cau chuyen LIVANA"
+      subheading="LIVANA ra doi tu mong muon mang thien nhien tro lai trong tung can phong do thi. Thuong hieu duoc sang lap boi nhung nguoi yeu loi song xanh va tri lieu bang mui huong."
     />
 
     <p className="rounded-3xl bg-white/80 p-6 text-sm leading-relaxed text-textMain/80 shadow-sm">
-      Chúng tôi tin rằng tinh dầu không chỉ là mùi hương mà còn là lời nhắc sống chậm và lắng nghe cơ thể. Từ khâu chọn hạt giống,
-      chăm sóc vùng trồng đến thiết kế bao bì, mọi chi tiết đều được thực hiện thủ công với sự tôn trọng thiên nhiên. Mỗi bộ sưu tập
-      đều gắn với một câu chuyện cảm hứng về vùng đất Việt Nam.
+      Chung toi tin rang tinh dau khong chi la mui huong ma con la loi nhac song cham va lang nghe co the. Tu khau chon hat giong, cham soc vung trong den
+      thiet ke bao bi, moi chi tiet deu duoc thuc hien thu cong voi su ton trong thien nhien. Moi bo suu tap deu gan voi mot cau chuyen cam hung ve vung dat Viet Nam.
     </p>
 
     <section className="grid gap-6 md:grid-cols-2">
       {coreValues.map((value) => (
         <article key={value.title} className="rounded-3xl border border-primary/10 bg-white/70 p-6">
-          <h3 className="text-xl font-semibold text-primary">{value.title}</h3>
+          <h2 className="text-xl font-semibold text-primary">{value.title}</h2>
           <p className="mt-2 text-sm text-textMain/80">{value.description}</p>
         </article>
       ))}
     </section>
 
     <section className="space-y-6">
-      <h3 className="text-2xl font-semibold text-textMain">Hành trình của một giọt tinh dầu</h3>
+      <h2 className="text-2xl font-semibold text-textMain">Hanh trinh cua mot giot tinh dau</h2>
       <div className="grid gap-6 md:grid-cols-3">
         {steps.map((step) => (
           <article key={step.title} className="rounded-3xl bg-primary/5 p-6 text-sm text-textMain/80">

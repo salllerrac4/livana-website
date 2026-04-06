@@ -1,6 +1,7 @@
-﻿import { Link, useParams } from 'react-router-dom';
-import { getPostBySlug } from '../data/blogPosts';
+import { Link, useParams } from 'react-router-dom';
 import Seo from '../components/Seo';
+import { getPostBySlug } from '../data/blogPosts';
+import { createBlogPostingSchema, createBreadcrumbSchema } from '../utils/structuredData';
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -9,14 +10,16 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="space-y-4 text-center">
-        <Seo title="Bài viết không tồn tại" noIndex />
-        <p className="text-xl font-semibold">Bài viết không tồn tại.</p>
+        <Seo title="Bai viet khong ton tai" noIndex />
+        <p className="text-xl font-semibold">Bai viet khong ton tai.</p>
         <Link to="/blog" className="text-primary">
-          Quay về Blog
+          Quay ve Blog
         </Link>
       </div>
     );
   }
+
+  const postPath = `/blog/${post.slug}`;
 
   return (
     <article className="space-y-8">
@@ -24,8 +27,17 @@ const BlogPost = () => {
         title={post.title}
         description={post.excerpt}
         image={post.coverImage}
+        url={postPath}
         type="article"
         publishedTime={post.publishedAt}
+        jsonLd={[
+          createBlogPostingSchema(post),
+          createBreadcrumbSchema([
+            { name: 'Trang chu', path: '/' },
+            { name: 'Blog', path: '/blog' },
+            { name: post.title, path: postPath },
+          ]),
+        ]}
       />
       <div className="space-y-3">
         <p className="text-xs uppercase tracking-[0.3em] text-primary/70">{new Date(post.publishedAt).toLocaleDateString('vi-VN')}</p>
@@ -42,7 +54,7 @@ const BlogPost = () => {
         <img
           src={post.coverImage}
           alt={post.coverAlt ?? post.title}
-          className="w-full max-h-[420px] rounded-3xl object-cover shadow-sm"
+          className="max-h-[420px] w-full rounded-3xl object-cover shadow-sm"
           loading="lazy"
         />
       )}
@@ -52,7 +64,7 @@ const BlogPost = () => {
         ))}
       </div>
       <Link to="/blog" className="inline-flex text-sm font-semibold text-primary">
-        ← Quay lại danh sách blog
+        ← Quay lai danh sach blog
       </Link>
     </article>
   );

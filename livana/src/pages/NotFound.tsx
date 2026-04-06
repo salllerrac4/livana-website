@@ -3,7 +3,7 @@ import Seo from '../components/Seo';
 
 const NotFound = () => (
   <div className="space-y-4 text-center">
-    <Seo title="Trang không tồn tại" noIndex />
+    <Seo title="Trang khong ton tai" noIndex />
     <h1 className="text-4xl font-semibold text-textMain">Trang không tồn tại</h1>
     <p className="text-sm text-textMain/70">Có thể đường dẫn đã thay đổi hoặc sản phẩm/blog đã bị gỡ.</p>
     <div className="flex flex-wrap justify-center gap-3">

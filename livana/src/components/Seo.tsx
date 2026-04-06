@@ -1,5 +1,9 @@
 import { Helmet } from 'react-helmet-async';
-import heroCover from '../assets/hero-1.png';
+import { useLocation } from 'react-router-dom';
+import heroCover from '../assets/hero-1-desktop.jpg';
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME, toAbsoluteUrl } from '../utils/seo';
+
+type JsonLdSchema = Record<string, unknown>;
 
 type SeoProps = {
   title?: string;
@@ -9,18 +13,7 @@ type SeoProps = {
   type?: 'website' | 'article';
   publishedTime?: string;
   noIndex?: boolean;
-};
-
-const DEFAULT_TITLE = 'LIVANA – Tinh dầu thiên nhiên & lối sống thư giãn';
-const DEFAULT_DESCRIPTION =
-  'Khám phá tinh dầu thiên nhiên LIVANA: hương thơm tinh tế, nguyên liệu sạch và gợi ý khuếch tán giúp bạn thư giãn, ngủ sâu và sống chậm.';
-
-const ensureAbsoluteUrl = (value?: string) => {
-  if (!value) return undefined;
-  if (value.startsWith('http') || value.startsWith('data:') || value.startsWith('blob:')) return value;
-  if (typeof window === 'undefined') return value;
-  const path = value.startsWith('/') ? value : `/${value}`;
-  return `${window.location.origin}${path}`;
+  jsonLd?: JsonLdSchema | JsonLdSchema[];
 };
 
 const Seo = ({
@@ -31,17 +24,20 @@ const Seo = ({
   type = 'website',
   publishedTime,
   noIndex,
+  jsonLd,
 }: SeoProps) => {
-  const fullTitle = title ? `${title} | LIVANA` : DEFAULT_TITLE;
-  const resolvedImage = ensureAbsoluteUrl(image);
-  const resolvedUrl = ensureAbsoluteUrl(url ?? (typeof window !== 'undefined' ? window.location.href : undefined));
+  const location = useLocation();
+  const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
+  const resolvedImage = toAbsoluteUrl(image);
+  const resolvedUrl = toAbsoluteUrl(url ?? `${location.pathname}${location.search}`);
   const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
+  const jsonLdScripts = (Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []).filter(Boolean);
 
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      {noIndex && <meta name="robots" content="noindex, nofollow" />}
+      <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
 
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
@@ -56,6 +52,11 @@ const Seo = ({
 
       {resolvedUrl && <link rel="canonical" href={resolvedUrl} />}
       {type === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {jsonLdScripts.map((schema, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
     </Helmet>
   );
 };

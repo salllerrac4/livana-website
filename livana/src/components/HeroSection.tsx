@@ -1,5 +1,6 @@
-﻿import Button from './Button';
-import heroDropLogo from '../assets/hero-1.svg';
+import Button from './Button';
+import heroDesktop from '../assets/hero-1-desktop.jpg';
+import heroMobile from '../assets/hero-1-mobile.jpg';
 
 const metrics = [
   { value: '4,9/5', label: 'ĐÁNH GIÁ HÀI LÒNG' },
@@ -70,7 +71,17 @@ const HeroSection = () => {
             <span className="hero-art__glow" aria-hidden="true" />
             <span className="hero-art__ring" aria-hidden="true" />
             <div className="hero-art__image-wrap">
-              <img src={heroDropLogo} alt="Livana hero" className="hero-art__image hero-creative-motion" />
+              <img
+                src={heroDesktop}
+                srcSet={`${heroMobile} 700w, ${heroDesktop} 1400w`}
+                sizes="(max-width: 1023px) 100vw, 50vw"
+                width="1400"
+                height="773"
+                loading="eager"
+                decoding="async"
+                alt="Livana hero"
+                className="hero-art__image hero-creative-motion"
+              />
             </div>
           </div>
         </div>

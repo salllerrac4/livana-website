@@ -4,8 +4,10 @@ import ProductGrid from '../components/ProductGrid';
 import ReviewCard from '../components/ReviewCard';
 import SectionTitle from '../components/SectionTitle';
 import Button from '../components/Button';
+import Seo from '../components/Seo';
 import { products } from '../data/products';
-import usageGuideImg from '../assets/huong dan su dung.svg';
+import usageGuideImg from '../assets/usage-guide.jpg';
+import { createOrganizationSchema, createWebsiteSchema } from '../utils/structuredData';
 
 const reviewList = [
   {
@@ -35,15 +37,90 @@ const safeTips = [
   'Bảo quản nơi mát, tránh ánh nắng trực tiếp.',
 ];
 
-const heroBenefitsImg = '/assets/cong-dung.svg';
+const storyHighlights = [
+  {
+    title: 'Tôi bắt đầu từ một căn phòng quá mệt',
+    detail:
+      'Livana không sinh ra từ một kế hoạch lớn. Nó bắt đầu vào những đêm tôi trở về nhà với một cái đầu nặng trĩu và chỉ mong tìm lại chút bình yên rất nhỏ.',
+  },
+  {
+    title: 'Tôi đi tìm mùi hương có ký ức',
+    detail:
+      'Tôi nhớ mùi sả sau cơn mưa, mùi vỏ bưởi mẹ hong ngoài hiên, mùi gỗ thơm trong những buổi tối cả nhà ngồi gần nhau. Tôi muốn giữ lại cảm giác đó trong từng chai tinh dầu.',
+  },
+  {
+    title: 'Tôi muốn Livana ở lại trong những phút yếu lòng nhất',
+    detail:
+      'Không phải để trang trí cuộc sống, mà để khi ai đó quá mệt, quá cô đơn, hoặc quá nhiều áp lực, họ vẫn còn một cách dịu dàng để tự chăm sóc mình.',
+  },
+];
+
+const heroBenefitsImg = '/assets/cong-dung.jpg';
 
 const Home = () => {
   const featuredProducts = products.filter((item) => item.isFeatured);
 
   return (
     <div className="space-y-12 md:space-y-16">
+      <Seo
+        description="Tinh Dau LIVANA mang den bo suu tap tinh dau thien nhien cho phong ngu, phong khach va goc lam viec. Kham pha san pham noi bat, cong dung va huong dan su dung an toan."
+        image={heroBenefitsImg}
+        url="/"
+        jsonLd={[createOrganizationSchema(), createWebsiteSchema()]}
+      />
       <HeroSection />
       <FeatureGrid />
+
+      <section className="space-y-8 rounded-[32px] bg-white/80 px-6 py-10 shadow-soft md:px-10">
+        <SectionTitle
+          heading="Câu chuyện Livana"
+          subheading="Một lời tự sự của người sáng lập về hành trình đi tìm sự bình yên bằng mùi hương"
+          align="center"
+        />
+        <div className="mx-auto max-w-4xl space-y-6">
+          <div className="space-y-4 text-sm leading-7 text-textMain/80 md:text-[15px]">
+            <p>
+              Có một giai đoạn tôi sống rất nhanh. Nhanh đến mức mỗi sáng thức dậy là một danh sách việc cần làm, còn mỗi tối trở về chỉ thấy trong
+              mình toàn tiếng ồn. Tôi đã từng nghĩ đó là cách người lớn vẫn sống: cố gắng thêm một chút, chịu đựng thêm một chút, rồi mọi thứ sẽ
+              ổn. Nhưng có những ngày, ngay cả việc hít một hơi thật sâu cũng trở nên khó khăn.
+            </p>
+            <p>
+              Tôi bắt đầu tìm lại những điều từng làm mình thấy an toàn. Đó là mùi sả chanh thoảng trong bếp, mùi vỏ bưởi mẹ phơi trước hiên nhà,
+              mùi lá thơm trong những chiều yên tĩnh của tuổi thơ. Những mùi hương ấy không nói gì nhiều, nhưng luôn khiến tôi chậm lại, dịu xuống,
+              và có cảm giác mình được trở về.
+            </p>
+            <p>
+              Livana ra đời từ chính nhu cầu rất riêng đó. Tôi không muốn tạo ra một sản phẩm chỉ để căn phòng thơm hơn. Tôi muốn làm ra những chai
+              tinh dầu có thể chạm vào cảm xúc con người một cách thật nhẹ, để ai đó sau một ngày kiệt sức vẫn có thể bật máy khuếch tán lên, ngồi
+              xuống, và cảm thấy lòng mình được nới lỏng từng chút một.
+            </p>
+            <p>
+              Vì vậy, tôi chọn đi chậm. Chọn nguyên liệu có nguồn gốc rõ ràng, chọn cách chưng cất giữ lại phần hương thuần khiết nhất, chọn kiểm tra
+              từng mẻ tinh dầu với sự cẩn trọng của một người biết rằng có những khách hàng tìm đến Livana không chỉ vì mùi hương, mà vì họ đang cần
+              một điểm tựa rất nhỏ để hồi phục.
+            </p>
+            <p>
+              Nếu hôm nay bạn đang mệt, đang mất ngủ, hoặc chỉ đơn giản là thấy lòng mình quá chật chội, tôi hy vọng Livana sẽ ở đó như một lời nhắc
+              dịu dàng: bạn không cần phải mạnh mẽ suốt cả ngày. Đôi khi, chữa lành bắt đầu từ việc cho phép bản thân dừng lại, hít thở sâu, và ở yên
+              cùng chính mình.
+            </p>
+            <p className="pt-2 font-medium italic text-primary/90">
+              Tôi tạo ra Livana để mỗi người, khi trở về nhà, đều có thể tìm thấy một khoảnh khắc bình yên thuộc về riêng mình.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              {storyHighlights.map((highlight) => (
+                <article
+                  key={highlight.title}
+                  className="rounded-2xl border border-primary/20 bg-white/70 p-4 shadow-soft"
+                >
+                  <h3 className="text-base font-semibold text-textMain">{highlight.title}</h3>
+                  <p className="mt-2 text-sm text-textMain/75">{highlight.detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="space-y-8">
         <SectionTitle heading="Sản phẩm nổi bật" subheading="Chọn lọc những mùi hương bán chạy nhất tháng" />

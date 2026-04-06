@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# LIVANA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website tinh dau LIVANA duoc build bang React + Vite va da duoc toi uu SEO co ban:
 
-Currently, two official plugins are available:
+- prerender cho cac trang quan trong
+- meta SEO theo tung page
+- JSON-LD cho Organization, WebSite, Product, BlogPosting, Breadcrumb
+- ho tro custom domain qua `VITE_SITE_URL`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Chay local
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Neu can chay dev:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+## Deploy len Netlify
+
+Project da co san config tai [netlify.toml](./netlify.toml):
+
+- build command: `npm run build`
+- publish directory: `dist`
+
+Netlify se doc file nay tu dong, ban khong can nhap lai build command thu cong.
+
+## Cau hinh custom domain
+
+1. Tao file `.env` tu [`.env.example`](./.env.example)
+2. Dat domain that su cua ban vao:
+
+```env
+VITE_SITE_URL=https://tinhdaulivana.vn
+```
+
+3. Trong Netlify:
+   - vao `Site configuration` -> `Environment variables`
+   - tao bien `VITE_SITE_URL` voi gia tri domain that su
+4. Deploy lai site
+
+Luu y:
+
+- Neu van dang dung Netlify subdomain thi co the giu:
+
+```env
+VITE_SITE_URL=https://tinhdaulivana.netlify.app
+```
+
+- Khi doi sang domain rieng, canonical va structured data se tu dong doi theo domain moi.
+
+## Goi y sau khi doi domain
+
+1. Kiem tra:
+   - `/robots.txt`
+   - `/sitemap.xml`
+   - title, canonical, JSON-LD o trang chu va trang chi tiet
+2. Mo [SEARCH_CONSOLE_CHECKLIST.md](./SEARCH_CONSOLE_CHECKLIST.md)
+3. Gui request indexing lai cac URL chinh tren Google Search Console
+
+## Files quan trong
+
+- [src/utils/seo.ts](./src/utils/seo.ts)
+- [src/utils/structuredData.ts](./src/utils/structuredData.ts)
+- [src/data/brand.ts](./src/data/brand.ts)
+- [SEARCH_CONSOLE_CHECKLIST.md](./SEARCH_CONSOLE_CHECKLIST.md)
