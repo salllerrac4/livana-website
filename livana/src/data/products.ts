@@ -4,7 +4,7 @@ import { buildSizePricing } from '../utils/pricing';
 import bachaAltImg from '../assets/bacha1.webp';
 import bachaImg from '../assets/bacha.webp';
 import camHeroImg from '../assets/cam2.webp';
-import huongDanSvg from '../assets/huong dan su dung.svg';
+import huongDanSvg from '../assets/usage-guide.jpg';
 import oaihuongImg from '../assets/oaihuong.webp';
 import oaihuong2Img from '../assets/oaihuong2.webp';
 import queHeroImg from '../assets/que1.webp';

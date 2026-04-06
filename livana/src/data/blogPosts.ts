@@ -1,5 +1,5 @@
 ﻿import type { BlogPost } from '../types/blog';
-import heroCover from '../assets/hero-1.png';
+import heroCover from '../assets/hero-1-desktop.jpg';
 
 export const blogPosts: BlogPost[] = [
   {
