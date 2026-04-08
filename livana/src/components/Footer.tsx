@@ -46,27 +46,25 @@ const Footer = () => {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-3">
         <div className="space-y-3">
           <h3 className="text-xl font-semibold">LIVANA</h3>
-          <p className="text-sm text-white/80">
-            Thuong hieu tinh dau thien nhien huong den su can bang xanh trong tung khong gian song.
-          </p>
+          <p className="text-sm text-white/80">Thương hiệu tinh dầu thiên nhiên hướng đến sự cân bằng xanh trong từng không gian sống.</p>
           <p className="text-sm text-white/70">
             Brand keyword: <span className="font-semibold text-white">tinhdaulivana</span>
           </p>
-          <p className="text-xs font-semibold text-primaryLight">SONG XANH - AN NHIEN</p>
+          <p className="text-xs font-semibold text-primaryLight">SỐNG XANH - AN NHIÊN</p>
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-primaryLight">Lien ket</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-primaryLight">Liên kết</h4>
           <div className="mt-3 flex flex-col gap-2 text-sm text-white/80">
-            <Link to="/products">San pham</Link>
-            <Link to="/about">Ve LIVANA</Link>
-            <Link to="/blog">Blog cam hung</Link>
-            <Link to="/contact">Lien he</Link>
+            <Link to="/products">Sản phẩm</Link>
+            <Link to="/about">Về LIVANA</Link>
+            <Link to="/blog">Blog cảm hứng</Link>
+            <Link to="/contact">Liên hệ</Link>
           </div>
         </div>
 
         <div className="space-y-3 text-sm text-white/80">
-          <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-primaryLight">Ket noi</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-[0.3em] text-primaryLight">Kết nối</h4>
           <p>Email: {supportEmail}</p>
           <p>Hotline/Zalo: {supportPhoneDisplay}</p>
           <p>Facebook, TikTok, Shopee: @{brandHandle}</p>
@@ -87,9 +85,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-white/70">
-        © {new Date().getFullYear()} LIVANA. Giu gan va lan toa nang luong xanh.
-      </div>
+      <div className="border-t border-white/10 py-4 text-center text-xs text-white/70">Copyright {new Date().getFullYear()} LIVANA. Giữ gần và lan tỏa năng lượng xanh.</div>
     </footer>
   );
 };

@@ -10,10 +10,10 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="space-y-4 text-center">
-        <Seo title="Bai viet khong ton tai" noIndex />
-        <p className="text-xl font-semibold">Bai viet khong ton tai.</p>
+        <Seo title="Bài viết không tồn tại" noIndex />
+        <p className="text-xl font-semibold">Bài viết không tồn tại.</p>
         <Link to="/blog" className="text-primary">
-          Quay ve Blog
+          Quay về Blog
         </Link>
       </div>
     );
@@ -33,7 +33,7 @@ const BlogPost = () => {
         jsonLd={[
           createBlogPostingSchema(post),
           createBreadcrumbSchema([
-            { name: 'Trang chu', path: '/' },
+            { name: 'Trang chủ', path: '/' },
             { name: 'Blog', path: '/blog' },
             { name: post.title, path: postPath },
           ]),
@@ -64,7 +64,7 @@ const BlogPost = () => {
         ))}
       </div>
       <Link to="/blog" className="inline-flex text-sm font-semibold text-primary">
-        ← Quay lai danh sach blog
+        ← Quay lại danh sách blog
       </Link>
     </article>
   );

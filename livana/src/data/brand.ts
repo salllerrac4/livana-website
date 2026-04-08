@@ -3,7 +3,7 @@ export const supportPhoneDisplay = '0345077138';
 export const supportPhoneIntl = '+84345077138';
 export const brandHandle = 'livana.official';
 
-export const brandAlternateNames = ['Tinh Dau LIVANA', 'Tinh Dau Livana', 'tinhdaulivana'];
+export const brandAlternateNames = ['Tinh Dầu LIVANA', 'Tinh Dầu Livana', 'tinhdaulivana'];
 
 export const brandProfiles = [
   {
@@ -24,4 +24,4 @@ export const brandProfiles = [
   },
 ] as const;
 
-export const brandSearchHint = 'Ban co the tim thuong hieu bang tu khoa "tinhdaulivana" hoac "Tinh Dau LIVANA".';
+export const brandSearchHint = 'Bạn có thể tìm thương hiệu bằng từ khóa "tinhdaulivana" hoặc "Tinh Dầu LIVANA".';

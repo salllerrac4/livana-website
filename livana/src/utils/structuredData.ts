@@ -1,4 +1,5 @@
 import { brandAlternateNames, brandProfiles, supportEmail, supportPhoneIntl } from '../data/brand';
+import type { FAQ } from '../data/faq';
 import logoLivana from '../assets/logo-livana.svg';
 import type { BlogPost } from '../types/blog';
 import type { Product } from '../types/product';
@@ -117,3 +118,26 @@ export const createBlogPostingSchema = (post: BlogPost): JsonLd => ({
   publisher,
   keywords: post.tags.join(', '),
 });
+
+export const createFAQSchema = (faqs: FAQ[]): JsonLd | undefined => {
+  const mainEntity = faqs
+    .filter((faq) => faq.question && faq.answer)
+    .map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    }));
+
+  if (!mainEntity.length) {
+    return undefined;
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity,
+  };
+};

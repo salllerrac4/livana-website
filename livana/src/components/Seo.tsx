@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import heroCover from '../assets/hero-1-desktop.jpg';
-import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, SITE_NAME, toAbsoluteUrl } from '../utils/seo';
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_LOCALE, SITE_NAME, TWITTER_HANDLE, toAbsoluteUrl } from '../utils/seo';
 
 type JsonLdSchema = Record<string, unknown>;
 
@@ -42,12 +42,16 @@ const Seo = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
+      <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content={OG_LOCALE} />
       {resolvedUrl && <meta property="og:url" content={resolvedUrl} />}
       {resolvedImage && <meta property="og:image" content={resolvedImage} />}
 
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:site" content={TWITTER_HANDLE} />
+      <meta name="twitter:creator" content={TWITTER_HANDLE} />
       {resolvedImage && <meta name="twitter:image" content={resolvedImage} />}
 
       {resolvedUrl && <link rel="canonical" href={resolvedUrl} />}

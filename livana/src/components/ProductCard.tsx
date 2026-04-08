@@ -17,12 +17,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   return (
     <div className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition hover:-translate-y-1">
       <div className="relative bg-white">
-        <img
-          src={product.imageUrl}
-          alt={product.name}
-          className="h-72 w-full object-contain p-3"
-          loading="lazy"
-        />
+        <img src={product.imageUrl} alt={product.name} className="h-72 w-full object-contain p-3" loading="lazy" />
         <div className="absolute left-4 top-4 flex flex-col gap-2">
           {product.isFeatured && <Badge label="Nổi bật" />}
           {discount && <Badge label={`- ${discount}%`} tone="warning" />}
@@ -52,6 +47,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
           </Button>
           {onAddToCart && (
             <button
+              type="button"
               onClick={() => onAddToCart(product)}
               className="rounded-full border border-primary px-4 py-3 text-sm font-semibold text-primary transition hover:bg-primary/10"
             >

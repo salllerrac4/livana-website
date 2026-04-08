@@ -63,7 +63,7 @@ const Home = () => {
   return (
     <div className="space-y-12 md:space-y-16">
       <Seo
-        description="Tinh Dau LIVANA mang den bo suu tap tinh dau thien nhien cho phong ngu, phong khach va goc lam viec. Kham pha san pham noi bat, cong dung va huong dan su dung an toan."
+        description="Tinh Dầu LIVANA mang đến bộ sưu tập tinh dầu thiên nhiên cho phòng ngủ, phòng khách và góc làm việc. Khám phá sản phẩm nổi bật, công dụng và hướng dẫn sử dụng an toàn."
         image={heroBenefitsImg}
         url="/"
         jsonLd={[createOrganizationSchema(), createWebsiteSchema()]}
