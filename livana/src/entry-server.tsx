@@ -2,8 +2,9 @@ import { renderToString } from 'react-dom/server';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import type { HelmetServerState } from 'react-helmet-async';
 import AppProviders from './AppProviders';
-import { prerenderRoutes } from './prerender-routes';
+import { prerenderRoutes, sitemapRoutes } from './prerender-routes';
 import { routeObjects } from './routes';
+import { SITE_URL } from './utils/seo';
 
 type HelmetContext = {
   helmet?: HelmetServerState;
@@ -34,4 +35,4 @@ export const render = (url: string) => {
   return { appHtml, head };
 };
 
-export { prerenderRoutes };
+export { prerenderRoutes, sitemapRoutes, SITE_URL };

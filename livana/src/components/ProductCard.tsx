@@ -15,15 +15,20 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   const discount = defaultOriginalPrice ? Math.round(((defaultOriginalPrice - defaultPrice) / defaultOriginalPrice) * 100) : null;
 
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-soft transition hover:-translate-y-1">
-      <div className="relative bg-white">
-        <img src={product.imageUrl} alt={product.name} className="h-72 w-full object-contain p-3" loading="lazy" />
+    <div className="group flex h-full flex-col transition hover:-translate-y-1">
+      <div className="relative overflow-hidden">
+        <img
+          src={product.imageUrl}
+          alt={product.name}
+          className="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
         <div className="absolute left-4 top-4 flex flex-col gap-2">
           {product.isFeatured && <Badge label="Nổi bật" />}
           {discount && <Badge label={`- ${discount}%`} tone="warning" />}
         </div>
       </div>
-      <div className="flex flex-1 flex-col gap-4 p-6">
+      <div className="flex flex-1 flex-col gap-4 px-2 pb-2 pt-6">
         <div>
           <p className="text-sm uppercase tracking-widest text-primary/70">{product.category}</p>
           <h3 className="mt-2 text-xl font-semibold text-textMain">

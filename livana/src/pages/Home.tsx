@@ -71,7 +71,7 @@ const Home = () => {
       <HeroSection />
       <FeatureGrid />
 
-      <section className="space-y-8 rounded-[32px] bg-white/80 px-6 py-10 shadow-soft md:px-10">
+      <section className="space-y-8 px-6 py-10 md:px-10">
         <SectionTitle
           heading="Câu chuyện Livana"
           subheading="Một lời tự sự của người sáng lập về hành trình đi tìm sự bình yên bằng mùi hương"
@@ -127,7 +127,7 @@ const Home = () => {
         <ProductGrid products={featuredProducts} />
       </section>
 
-      <section className="grid gap-8 rounded-[32px] bg-white/60 p-8 shadow-soft md:grid-cols-2">
+      <section className="grid gap-8 md:grid-cols-2">
         <div className="space-y-4 order-2 md:order-1">
           <SectionTitle
             heading="Cách sử dụng tinh dầu an toàn"
@@ -157,7 +157,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="rounded-[32px] bg-white/80 px-6 py-8 shadow-soft md:px-10">
+      <section className="px-6 py-8 md:px-10">
         <div className="mx-auto grid max-w-5xl items-center gap-8 md:grid-cols-2">
           <div className="overflow-hidden rounded-2xl border border-primary/10 bg-white">
             <img

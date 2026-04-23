@@ -111,7 +111,7 @@ const ProductDetail = () => {
         url={productPath}
         jsonLd={structuredData}
       />
-      <div className="grid gap-8 rounded-[32px] bg-white/80 p-6 shadow-soft md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2">
         <div
           className="relative rounded-[32px] bg-white p-6"
           onTouchStart={handleTouchStart}

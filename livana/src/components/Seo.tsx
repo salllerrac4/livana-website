@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import heroCover from '../assets/hero-1-desktop.jpg';
-import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_LOCALE, SITE_NAME, TWITTER_HANDLE, toAbsoluteUrl } from '../utils/seo';
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, OG_LOCALE, SITE_NAME, TWITTER_HANDLE, normalizeSitePath, toAbsoluteUrl } from '../utils/seo';
 
 type JsonLdSchema = Record<string, unknown>;
 
@@ -29,7 +29,8 @@ const Seo = ({
   const location = useLocation();
   const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
   const resolvedImage = toAbsoluteUrl(image);
-  const resolvedUrl = toAbsoluteUrl(url ?? `${location.pathname}${location.search}`);
+  const resolvedPath = normalizeSitePath(url ?? location.pathname);
+  const resolvedUrl = noIndex ? undefined : toAbsoluteUrl(resolvedPath);
   const twitterCard = resolvedImage ? 'summary_large_image' : 'summary';
   const jsonLdScripts = (Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : []).filter(Boolean);
 

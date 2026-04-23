@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /cart
-
-Sitemap: https://tinhdaulivana.netlify.app/sitemap.xml

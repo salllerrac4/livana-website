@@ -58,7 +58,7 @@ const Blog = () => {
         subheading="Nội dung về tinh dầu thiên nhiên, mẹo an toàn và cách tạo không gian sống dễ chịu từ đội ngũ LIVANA."
       />
 
-      <section className="grid gap-5 rounded-[32px] bg-white/80 p-6 shadow-soft md:grid-cols-3">
+      <section className="grid gap-5 md:grid-cols-3">
         {blogHighlights.map((item) => (
           <article key={item.title} className="rounded-3xl border border-primary/10 bg-white/90 p-5">
             <h2 className="text-lg font-semibold text-textMain">{item.title}</h2>
@@ -67,7 +67,7 @@ const Blog = () => {
         ))}
       </section>
 
-      <section className="rounded-[32px] bg-primary/5 p-6 md:p-8">
+      <section>
         <h2 className="text-2xl font-semibold text-textMain">Blog này giúp gì cho người đang tìm tinh dầu?</h2>
         <div className="mt-4 space-y-4 text-sm leading-7 text-textMain/80 md:text-[15px]">
           <p>
@@ -105,7 +105,7 @@ const Blog = () => {
         ))}
       </div>
 
-      <section className="space-y-5 rounded-[32px] bg-white/80 p-6 shadow-soft md:p-8">
+      <section className="space-y-5">
         <h2 className="text-2xl font-semibold text-textMain">Câu hỏi thường gặp về blog tinh dầu</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {blogFaqs.map((item) => (

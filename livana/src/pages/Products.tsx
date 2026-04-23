@@ -120,7 +120,7 @@ const Products = () => {
 
       <ProductGrid products={filtered} onAddToCart={handleAdd} emptyMessage="Chưa có sản phẩm thuộc danh mục này." />
 
-      <section className="grid gap-5 rounded-[32px] bg-white/80 p-6 shadow-soft md:grid-cols-3">
+      <section className="grid gap-5 md:grid-cols-3">
         {collectionHighlights.map((item) => (
           <article key={item.title} className="rounded-3xl border border-primary/10 bg-white/90 p-5">
             <h2 className="text-lg font-semibold text-textMain">{item.title}</h2>
@@ -129,7 +129,7 @@ const Products = () => {
         ))}
       </section>
 
-      <section className="rounded-[32px] bg-primary/5 p-6 md:p-8">
+      <section>
         <h2 className="text-2xl font-semibold text-textMain">Cách chọn tinh dầu thiên nhiên theo nhu cầu</h2>
         <div className="mt-4 space-y-4 text-sm leading-7 text-textMain/80 md:text-[15px]">
           <p>
@@ -143,7 +143,7 @@ const Products = () => {
         </div>
       </section>
 
-      <section className="space-y-5 rounded-[32px] bg-white/80 p-6 shadow-soft md:p-8">
+      <section className="space-y-5">
         <h2 className="text-2xl font-semibold text-textMain">Sản phẩm được tìm nhiều</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {featuredProducts.map((item) => (
@@ -158,7 +158,7 @@ const Products = () => {
         </div>
       </section>
 
-      <section className="space-y-5 rounded-[32px] bg-white/80 p-6 shadow-soft md:p-8">
+      <section className="space-y-5">
         <h2 className="text-2xl font-semibold text-textMain">Câu hỏi thường gặp khi chọn tinh dầu</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {productFaqs.map((item) => (
