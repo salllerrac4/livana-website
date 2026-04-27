@@ -3,9 +3,9 @@ import { brandHandle } from '../data/brand';
 export const SITE_NAME = 'LIVANA';
 const configuredSiteUrl = import.meta.env.VITE_SITE_URL?.trim().replace(/\/+$/, '');
 export const SITE_URL = configuredSiteUrl || 'https://tinhdaulivana.netlify.app';
-export const DEFAULT_TITLE = 'Tinh Dầu LIVANA | Tinh dầu thiên nhiên cho không gian thư giãn';
+export const DEFAULT_TITLE = 'LIVANA | Tinh Dầu Thiên Nhiên - Khoảng Bình Yên Trong Ngày';
 export const DEFAULT_DESCRIPTION =
-  'Tinh Dầu LIVANA cung cấp tinh dầu thiên nhiên, an toàn cho gia đình và không gian thư giãn. Khám phá sản phẩm, bài viết và mẹo sử dụng hữu ích từ LIVANA.';
+  'LIVANA sinh ra từ mong muốn giữ lại một khoảng bình yên nhỏ trong ngày. Giúp bạn thở chậm hơn, chậm lại và tìm thấy sự thư thái qua những hương thơm thiên nhiên tinh khiết.';
 
 const normalizeTwitterHandle = (handle: string) => (handle.startsWith('@') ? handle : `@${handle}`);
 export const TWITTER_HANDLE = normalizeTwitterHandle(brandHandle);
