@@ -91,7 +91,8 @@ const ProductDetail = () => {
 
   const selectedPrice = getProductPrice(product, size);
   const selectedOriginalPrice = getProductOriginalPrice(product, size);
-  const metaDescription = `${product.shortDescription} Nốt hương: ${product.scentNotes.join(', ')}. Xem chi tiết sản phẩm ${product.name} tại LIVANA.`;
+  const categoryLabel = product.category === 'fresh' ? 'tươi mát, năng lượng' : product.category === 'sleep' ? 'ngủ ngon, chữa lành' : product.category === 'focus' ? 'tập trung, minh mẫn' : 'thư giãn, bình an';
+  const metaDescription = `${product.shortDescription} Nhóm hương ${categoryLabel}. Chiết xuất từ thiên nhiên, tinh dầu LIVANA giúp bạn tìm lại khoảng bình yên giữa nhịp sống hối hả.`;
   const productPath = `/products/${product.slug}`;
   const structuredData = [
     createProductSchema(product, productPath),
