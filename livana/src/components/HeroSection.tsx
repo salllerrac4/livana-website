@@ -1,6 +1,6 @@
 import Button from './Button';
-import heroDesktop from '../assets/hero-1-desktop.jpg';
-import heroMobile from '../assets/hero-1-mobile.jpg';
+import heroDesktop from '../assets/new-hero-desktop.jpg';
+import heroMobile from '../assets/new-hero-desktop.jpg';
 
 const metrics = [
   { value: '4,9/5', label: 'ĐÁNH GIÁ HÀI LÒNG' },
@@ -22,8 +22,8 @@ const HeroSection = () => {
           height="773"
           loading="eager"
           decoding="async"
-          alt="Không gian tinh dầu Livana"
-          className="hero-stage__media hero-creative-motion"
+          alt="Không gian tinh dầu Livana - Bình yên và thư thái"
+          className="hero-stage__media hero-stage__media--new-hero hero-creative-motion"
         />
         <div className="hero-stage__overlay" aria-hidden="true" />
         <div className="hero-stage__content hero-reveal hero-reveal--1">
