@@ -3,6 +3,18 @@ import heroCover from '../assets/hero-1-desktop.jpg';
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'b8',
+    slug: 'cach-dung-tinh-dau-sa-chanh-duoi-muoi-mua-mua',
+    title: 'Nhà thơm, sạch muỗi: Cách dùng tinh dầu Sả Chanh hiệu quả nhất cho mùa mưa',
+    excerpt: 'Khám phá cách dùng tinh dầu Sả Chanh nguyên chất của LIVANA để đuổi muỗi tự nhiên, thanh lọc không khí và bảo vệ sức khỏe gia đình trong mùa mưa.',
+    content:
+      'Chào bạn, mùa mưa mang đến không khí trong lành và cây cối xanh tươi, nhưng cũng là lúc những vị khách không mời – loài muỗi – bắt đầu xuất hiện nhiều hơn. Thay vì dùng các sản phẩm hóa học có thể ảnh hưởng đến sức khỏe, tại sao chúng ta không tìm đến giải pháp từ thiên nhiên? Tinh dầu Sả Chanh nguyên chất của LIVANA chính là “vũ khí bí mật” giúp ngôi nhà bạn vừa thơm mát, vừa an toàn khỏi muỗi.\n\n1. Tại sao Tinh Dầu Sả Chanh lại hiệu quả trong việc đuổi muỗi?\n\nBạn có thể đã quen thuộc với mùi hương sả chanh trong các sản phẩm tẩy rửa, nhưng ít ai biết rằng tinh dầu Sả Chanh nguyên chất lại là khắc tinh của muỗi. Lý do nằm ở hợp chất Citral và Geraniol có trong Sả Chanh. Theo các nghiên cứu khoa học, những hợp chất này có khả năng gây mất phương hướng và xua đuổi muỗi hiệu quả. Hơn nữa, mùi hương này còn mang lại cảm giác sảng khoái, giúp bạn tỉnh táo và làm sạch không khí trong phòng.\n\n2. Cách dùng Tinh Dầu Sả Chanh để đuổi muỗi hiệu quả nhất:\n\nĐể tận dụng tối đa công dụng của tinh dầu Sả Chanh, bạn có thể áp dụng các cách sau đây:\n\n- Dùng với Máy khuếch tán tinh dầu: Cho khoảng 5-8 giọt tinh dầu Sả Chanh vào máy khuếch tán có chứa nước. Bật máy và để hương thơm lan tỏa khắp không gian. Nên đặt máy ở vị trí trung tâm phòng hoặc gần cửa sổ, nơi muỗi thường xâm nhập.\n- Xông phòng bằng đèn xông tinh dầu: Cho khoảng 1-2 giọt tinh dầu vào đĩa chứa nước trên đèn. Bật đèn và tận hưởng hương thơm tinh khiết.\n- Làm bình xịt đuổi muỗi tự nhiên: Pha loãng tinh dầu Sả Chanh với nước và một chút cồn (hoặc dung dịch muối khoáng). Tỷ lệ gợi ý: 10-15 giọt tinh dầu Sả Chanh cho 100ml dung dịch. Lắc đều trước khi sử dụng và xịt vào các góc nhà, cửa ra vào.\n- Tẩm vào bông gòn hoặc vải: Nhỏ vài giọt tinh dầu Sả Chanh vào bông gòn, khăn giấy rồi đặt ở các góc phòng, tủ quần áo, hoặc gần giường ngủ.\n\n3. Lưu ý quan trọng khi sử dụng Tinh Dầu Sả Chanh:\n\n- Luôn pha loãng: Tinh dầu nguyên chất rất đậm đặc. Nếu dùng trực tiếp lên da, bạn cần pha loãng với dầu nền theo tỷ lệ an toàn.\n- Tránh xa tầm tay trẻ em: Dù là sản phẩm tự nhiên, tinh dầu vẫn cần được bảo quản cẩn thận.\n- Khuếch tán trong phòng thoáng khí: Không nên sử dụng tinh dầu trong không gian quá kín trong thời gian dài.\n- Kiểm tra phản ứng da: Nếu bạn có làn da nhạy cảm, hãy thử trên một vùng da nhỏ trước khi áp dụng rộng rãi.\n\nLời kết: Mùa mưa này, hãy để không gian sống của bạn luôn trong lành, thơm mát và an toàn với Tinh dầu Sả Chanh nguyên chất từ LIVANA. Một lựa chọn tự nhiên, hiệu quả và mang đến cảm giác thư thái trọn vẹn.',
+    coverImage: heroCover,
+    coverAlt: 'Tinh dầu Sả Chanh Livana hỗ trợ đuổi muỗi tự nhiên',
+    publishedAt: '2026-04-29',
+    tags: ['tinh dầu sả chanh', 'đuổi muỗi tự nhiên', 'mẹo mùa mưa', 'LIVANA'],
+  },
+  {
     id: 'b7',
     slug: 'tao-khong-gian-thu-gian-voi-tinh-dau-thien-nhien',
     title: 'Tạo không gian thư giãn tại nhà với tinh dầu thiên nhiên',
