@@ -63,7 +63,8 @@ const Home = () => {
   return (
     <div className="space-y-12 md:space-y-16">
       <Seo
-        description="Tinh Dầu LIVANA mang đến bộ sưu tập tinh dầu thiên nhiên cho phòng ngủ, phòng khách và góc làm việc. Khám phá sản phẩm nổi bật, công dụng và hướng dẫn sử dụng an toàn."
+        title="Tinh Dầu LIVANA | Chậm Lại & Tìm Về Bình Yên"
+        description="LIVANA sinh ra từ mong muốn giữ lại một khoảng bình yên nhỏ trong ngày. Giúp bạn thở chậm hơn và chậm lại giữa nhịp sống hối hả. Khám phá các dòng tinh dầu thiên nhiên nguyên chất." 
         image={heroBenefitsImg}
         url="/"
         jsonLd={[createOrganizationSchema(), createWebsiteSchema()]}
